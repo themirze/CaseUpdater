@@ -1,17 +1,4 @@
 javascript: (function () {
-  var bootstrapCSS = document.createElement("link");
-  bootstrapCSS.rel = "stylesheet";
-  bootstrapCSS.href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css";
-  document.head.appendChild(bootstrapCSS);
-
-  var bootstrapJS = document.createElement("script");
-  bootstrapJS.src = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js";
-  document.body.appendChild(bootstrapJS);
-
-  var jqueryJS = document.createElement("script");
-  jqueryJS.src = "https://code.jquery.com/jquery-3.5.1.slim.min.js";
-  document.body.appendChild(jqueryJS);
-  
   var popupDiv = document.createElement("div");
   popupDiv.id = "customPopup";
   popupDiv.style.position = "fixed";
@@ -29,7 +16,7 @@ javascript: (function () {
   popupDiv.style.overflowY = "auto";
 
   var contentDiv = document.createElement("div");
-  contentDiv.style.backgroundColor = "white";  
+  contentDiv.style.backgroundColor = "white";
   contentDiv.style.width = "90%";
   contentDiv.style.height = "80%";
   contentDiv.style.borderRadius = "30px";
