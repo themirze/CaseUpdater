@@ -1,4 +1,4 @@
-(function () {
+javascript: (function () {
     var popupDiv = document.createElement("div");
     popupDiv.id = "customPopup";
     popupDiv.style.position = "fixed";
@@ -35,10 +35,7 @@
               <h3 style="display: inline;">Implementation</h3>
               <button
                 id="implementationButton"
-                style="background: none; border: none; cursor: pointer; font-size: 1.2em;"
-              >
-                ⬇
-              </button>
+                style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
             </div>
             <div
               id="implementationContent"
@@ -896,5 +893,4 @@
         }, 1000);
       }, 1000);
     }
-  })();
-  
+  })();  
