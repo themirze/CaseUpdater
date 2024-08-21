@@ -29,178 +29,178 @@ javascript: (function () {
   contentDiv.style.flexDirection = "column";
   contentDiv.style.justifyContent = "space-between";
   contentDiv.innerHTML = `
-    <div id="noteMailContainer" style="display: flex; justify-content:space-between;">
-        <div id="noteContainer">
-            <div>
-                <h3 style="display: inline;">Implementation</h3>
-                <button id="implementationButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-            </div>
-            <div id="implementationContent" style="display: none; margin-left: 20px;">
-                <a href="#" id="soio">SO - Implementation Only</a><br><br>
-                <a href="#" id="soeo">SO - Educational Only</a><br><br>
-                <a href="#" id="soto">SO - Troubleshooting Only</a><br><br>
-            </div>
-            <div>
-                <h3 style="display: inline;">Inactive</h3>
-                <button id="inactiveButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-            </div>
-            <div id="inactiveContent" style="display: none; margin-left: 20px;">
-                <a href="#" id="inNotReachable">IN - Not Reachable</a><br><br>
-                <a href="#" id="inNotInterested">IN - Not Interested</a><br><br>
-                <a href="#" id="inNotReady1">IN - Not Ready (JoinBase)</a><br><br>
-                <a href="#" id="inNotReady2">IN - Not Ready (TechnicalBase)</a><br><br>
-                <a href="#" id="inOOS">IN - Out of Scope - Rerouted</a><br><br>
-            </div>
-            <div>
-                <h3 style="display: inline;">Reschedule</h3>
-                <button id="rescheduleButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-            </div>
-            <div id="rescheduleContent" style="display: none; margin-left: 20px;">
-                <a href="#" id="reschedule1">AS - Reschedule 1</a><br><br>
-                <a href="#" id="aPreschedule">AS - Acceptable Reschedule</a><br><br>
-                <a href="#" id="aDirectReschedule">AS - Direct Reschedule</a><br><br>
-            </div>
-            <div>
-                <h3 style="display: inline;">Awaiting Input</h3>
-                <button id="awaitingInputButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-            </div>
-            <div id="awaitingInputContent" style="display: none; margin-left: 20px;">
-                <a href="#" id="aAfa">NI - Awaiting Action from ADV</a><br><br>
-                <a href="#" id="aVa">NI - Awaiting Validation ADS</a><br><br>
-                <a href="#" id="aVm">NI - Awaiting Validation MC</a><br><br>
-            </div>
-            <div>
-                <h3 style="display: inline;">Attempt Call</h3>
-                <button id="attemptCallButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-            </div>
-            <div id="attemptCallContent" style="display: none; margin-left: 20px;">
-                <a href="#" id="aC">AC - Attempt Contact</a><br><br>
-            </div>
-            <div>
-                <h3 style="display: inline;">Extras</h3>
-                <button id="emptyTemplateButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-            </div>
-            <div id="emptyTemplateContent" style="display: none; margin-left: 20px;">
-                <a href="#" id="eTemplate">Empty Template</a><br><br>
-                <a href="#" id="fastUpdate">Case Updater</a><br><br>
-            </div>
-        </div>
-        <div id="mailContainer">
-            <div>
-                <h3 style="display: inline;">Tag & Shopping</h3>
-                <button id="tagShoppingButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-            </div>
-            <div id="tagShoppingContent" style="display: none; margin-left: 20px;">
-                <div>
-                    <h3 style="display: inline;">First Response</h3>
-                    <button id="firstResponseButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-                </div>
-                <div id="firstResponseContent" style="display: none; margin-left: 20px;">
-                    <a href="#" id="firstResponse">First Response Email for New Tickets</a><br><br>
-                    <a href="#" id="firstResponseDFA">First Response Email for New Tickets DFA</a><br><br>
-                </div>
-                <div>
-                    <h3 style="display: inline;">AS - Reschedule</h3>
-                    <button id="rescheduleButtonTS" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-                </div>
-                <div id="rescheduleContentTS" style="display: none; margin-left: 20px;">
-                    <a href="#" id="rescheduleTS1">AS - Reschedule 1</a><br><br>
-                    <a href="#" id="aPrescheduleTS">AS - Acceptable Reschedule</a><br><br>
-                    <a href="#" id="aDirectRescheduleTS">AS - Direct Reschedule</a><br><br>
-                </div>
-                <div>
-                    <h3 style="display: inline;">IN - Inactive Cases</h3>
-                    <button id="inactiveButtonTS" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-                </div>
-                <div id="inactiveContentTS" style="display: none; margin-left: 20px;">
-                    <a href="#" id="inRescLimExc">IN - Reschedule Limit Exceeded</a><br><br>
-                    <a href="#" id="inInf">IN - Infeasible</a><br><br>
-                    <a href="#" id="inNreach">IN - Not Reachable</a><br><br>
-                    <a href="#" id="inNotIntest">IN - Not Interested</a><br><br>
-                    <a href="#" id="inNotReady">IN - Not Ready</a><br><br>
-                    <a href="#" id="inOssRtit">IN - Out of Scope - Rerouted to Internal Team</a><br><br>
-                    <a href="#" id="inOssUtt">IN - Out of Scope - Unable to Transfer</a><br><br>
-                    <a href="#" id="inOssEts">IN - Out of Scope - Email to Seller</a><br><br>
-                    <a href="#" id="inO">IN - Other</a><br><br>
-                </div>
-                <div>
-                    <h3 style="display: inline;">NI - Awaiting & Attempt</h3>
-                    <button id="awaitingButtonTs" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-                </div>
-                <div id="awaitingContentTs" style="display: none; margin-left: 20px;">
-                    <a href="#" id="niAwInp">NI - Awaiting Inputs</a><br><br>
-                    <a href="#" id="niInCons">NI - Awaiting Validation</a><br><br>
-                    <a href="#" id="niAwaVal">AS - Direct Reschedule</a><br><br>
-                    <a href="#" id="niAttC">NI - Attempted Contact</a><br><br>
-                </div>
-                <div>
-                    <h3 style="display: inline;">SO - Implementation</h3>
-                    <button id="impButtonTs" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-                </div>
-                <div id="impContentTs" style="display: none; margin-left: 20px;">
-                    <a href="#" id="impEo">SO- Education Only</a><br><br>
-                    <a href="#" id="impTo">SO - Troubleshooting Only</a><br><br>
-                    <a href="#" id="impSf">SO - Verified</a><br><br>
-                    <a href="#" id="impVnnc">SO - Verified No Recent Conversion</a><br><br>
-                    <a href="#" id="impUnv">SO - Unverified</a><br><br>
-                    <a href="#" id="impVnn">SO - Verification Not Needed</a><br><br>
-                </div>
-            </div>
-            <div>
-                <h3 style="display: inline;">LeadGen</h3>
-                <button id="LeadGenButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-            </div>
-            <div id="LeadGenContent" style="display: none; margin-left: 20px;">
-                <div>
-                    <h3 style="display: inline;">AS - Reschedule</h3>
-                    <button id="LrescheduleButtonTS" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-                </div>
-                <div id="LrescheduleContentTS" style="display: none; margin-left: 20px;">
-                    <a href="#" id="LworkIp">AS - Work in Progress</a><br><br>
-                    <a href="#" id="Lresch">AS - Reschedule 1</a><br><br>
-                    <a href="#" id="LreschA">AS - Acceptable Reschedule</a><br><br>
-                </div>
-                <div>
-                    <h3 style="display: inline;">AS - Reschedule</h3>
-                    <button id="LawaitingButtonTs" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-                </div>
-                <div id="LawaitingContentTs" style="display: none; margin-left: 20px;">
-                    <a href="#" id="LawaIp">NI - Awaiting Inputs</a><br><br>
-                    <a href="#" id="Lic">NI - In Consult</a><br><br>
-                    <a href="#" id="Lav">NI - Awaiting Validation</a><br><br>
-                    <a href="#" id="Lac">NI - Attempted Contact</a><br><br>
-                    <a href="#" id="Lmlag">NI - Modifying leadform to accept GCLID</a><br><br>
-                    <a href="#" id="Lucag">NI - Updating CRM to accept GCLID</a><br><br>
-                    <a href="#" id="Lpdi">NI - Preparing data for import</a><br><br>
-                    <a href="#" id="Lno">NI - Other</a><br><br>
-                </div>
-                <div>
-                    <h3 style="display: inline;">IN - Inactive Cases</h3>
-                    <button id="LinactiveButtonTS" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-                </div>
-                <div id="LinactiveContentTS" style="display: none; margin-left: 20px;">
-                    <a href="#" id="linInf">IN - Infeasible</a><br><br>
-                    <a href="#" id="linNreach">IN - Not Reachable</a><br><br>
-                    <a href="#" id="linNotIntest">IN - Not Interested</a><br><br>
-                    <a href="#" id="linNotReady">IN - Not Ready</a><br><br>
-                    <a href="#" id="linOssRtit">IN - Out of Scope - Rerouted to Internal Team</a><br><br>
-                    <a href="#" id="linOssUtt">IN - Out of Scope - Unable to Transfer</a><br><br>
-                    <a href="#" id="linOssEts">IN - Out of Scope - Email to Seller</a><br><br>
-                    <a href="#" id="linO">IN - Other</a><br><br>
-                </div>
-                <div>
-                    <h3 style="display: inline;">SO - Implementation</h3>
-                    <button id="limpButtonTs" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
-                </div>
-                <div id="limpContentTs" style="display: none; margin-left: 20px;">
-                    <a href="#" id="limpSf">SO - Verified</a><br><br>
-                    <a href="#" id="limpves">SO - Verified Email to Seller</a><br><br>
-                    <a href="#" id="limpso">SO - Others</a><br><br>
-                </div>
-            </div>
-            </div>
-        </div>
-`;
+      <div id="noteMailContainer" style="display: flex; justify-content:space-between;">
+          <div id="noteContainer">
+              <div>
+                  <h3 style="display: inline;">Implementation</h3>
+                  <button id="implementationButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+              </div>
+              <div id="implementationContent" style="display: none; margin-left: 20px;">
+                  <a href="#" id="soio">SO - Implementation Only</a><br><br>
+                  <a href="#" id="soeo">SO - Educational Only</a><br><br>
+                  <a href="#" id="soto">SO - Troubleshooting Only</a><br><br>
+              </div>
+              <div>
+                  <h3 style="display: inline;">Inactive</h3>
+                  <button id="inactiveButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+              </div>
+              <div id="inactiveContent" style="display: none; margin-left: 20px;">
+                  <a href="#" id="inNotReachable">IN - Not Reachable</a><br><br>
+                  <a href="#" id="inNotInterested">IN - Not Interested</a><br><br>
+                  <a href="#" id="inNotReady1">IN - Not Ready (JoinBase)</a><br><br>
+                  <a href="#" id="inNotReady2">IN - Not Ready (TechnicalBase)</a><br><br>
+                  <a href="#" id="inOOS">IN - Out of Scope - Rerouted</a><br><br>
+              </div>
+              <div>
+                  <h3 style="display: inline;">Reschedule</h3>
+                  <button id="rescheduleButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+              </div>
+              <div id="rescheduleContent" style="display: none; margin-left: 20px;">
+                  <a href="#" id="reschedule1">AS - Reschedule 1</a><br><br>
+                  <a href="#" id="aPreschedule">AS - Acceptable Reschedule</a><br><br>
+                  <a href="#" id="aDirectReschedule">AS - Direct Reschedule</a><br><br>
+              </div>
+              <div>
+                  <h3 style="display: inline;">Awaiting Input</h3>
+                  <button id="awaitingInputButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+              </div>
+              <div id="awaitingInputContent" style="display: none; margin-left: 20px;">
+                  <a href="#" id="aAfa">NI - Awaiting Action from ADV</a><br><br>
+                  <a href="#" id="aVa">NI - Awaiting Validation ADS</a><br><br>
+                  <a href="#" id="aVm">NI - Awaiting Validation MC</a><br><br>
+              </div>
+              <div>
+                  <h3 style="display: inline;">Attempt Call</h3>
+                  <button id="attemptCallButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+              </div>
+              <div id="attemptCallContent" style="display: none; margin-left: 20px;">
+                  <a href="#" id="aC">AC - Attempt Contact</a><br><br>
+              </div>
+              <div>
+                  <h3 style="display: inline;">Extras</h3>
+                  <button id="emptyTemplateButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+              </div>
+              <div id="emptyTemplateContent" style="display: none; margin-left: 20px;">
+                  <a href="#" id="eTemplate">Empty Template</a><br><br>
+                  <a href="#" id="fastUpdate">Case Updater</a><br><br>
+              </div>
+          </div>
+          <div id="mailContainer">
+              <div>
+                  <h3 style="display: inline;">Tag & Shopping</h3>
+                  <button id="tagShoppingButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+              </div>
+              <div id="tagShoppingContent" style="display: none; margin-left: 20px;">
+                  <div>
+                      <h3 style="display: inline;">First Response</h3>
+                      <button id="firstResponseButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+                  </div>
+                  <div id="firstResponseContent" style="display: none; margin-left: 20px;">
+                      <a href="#" id="firstResponse">First Response Email for New Tickets</a><br><br>
+                      <a href="#" id="firstResponseDFA">First Response Email for New Tickets DFA</a><br><br>
+                  </div>
+                  <div>
+                      <h3 style="display: inline;">AS - Reschedule</h3>
+                      <button id="rescheduleButtonTS" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+                  </div>
+                  <div id="rescheduleContentTS" style="display: none; margin-left: 20px;">
+                      <a href="#" id="rescheduleTS1">AS - Reschedule 1</a><br><br>
+                      <a href="#" id="aPrescheduleTS">AS - Acceptable Reschedule</a><br><br>
+                      <a href="#" id="aDirectRescheduleTS">AS - Direct Reschedule</a><br><br>
+                  </div>
+                  <div>
+                      <h3 style="display: inline;">IN - Inactive Cases</h3>
+                      <button id="inactiveButtonTS" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+                  </div>
+                  <div id="inactiveContentTS" style="display: none; margin-left: 20px;">
+                      <a href="#" id="inRescLimExc">IN - Reschedule Limit Exceeded</a><br><br>
+                      <a href="#" id="inInf">IN - Infeasible</a><br><br>
+                      <a href="#" id="inNreach">IN - Not Reachable</a><br><br>
+                      <a href="#" id="inNotIntest">IN - Not Interested</a><br><br>
+                      <a href="#" id="inNotReady">IN - Not Ready</a><br><br>
+                      <a href="#" id="inOssRtit">IN - Out of Scope - Rerouted to Internal Team</a><br><br>
+                      <a href="#" id="inOssUtt">IN - Out of Scope - Unable to Transfer</a><br><br>
+                      <a href="#" id="inOssEts">IN - Out of Scope - Email to Seller</a><br><br>
+                      <a href="#" id="inO">IN - Other</a><br><br>
+                  </div>
+                  <div>
+                      <h3 style="display: inline;">NI - Awaiting & Attempt</h3>
+                      <button id="awaitingButtonTs" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+                  </div>
+                  <div id="awaitingContentTs" style="display: none; margin-left: 20px;">
+                      <a href="#" id="niAwInp">NI - Awaiting Inputs</a><br><br>
+                      <a href="#" id="niInCons">NI - Awaiting Validation</a><br><br>
+                      <a href="#" id="niAwaVal">AS - Direct Reschedule</a><br><br>
+                      <a href="#" id="niAttC">NI - Attempted Contact</a><br><br>
+                  </div>
+                  <div>
+                      <h3 style="display: inline;">SO - Implementation</h3>
+                      <button id="impButtonTs" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+                  </div>
+                  <div id="impContentTs" style="display: none; margin-left: 20px;">
+                      <a href="#" id="impEo">SO- Education Only</a><br><br>
+                      <a href="#" id="impTo">SO - Troubleshooting Only</a><br><br>
+                      <a href="#" id="impSf">SO - Verified</a><br><br>
+                      <a href="#" id="impVnnc">SO - Verified No Recent Conversion</a><br><br>
+                      <a href="#" id="impUnv">SO - Unverified</a><br><br>
+                      <a href="#" id="impVnn">SO - Verification Not Needed</a><br><br>
+                  </div>
+              </div>
+              <div>
+                  <h3 style="display: inline;">LeadGen</h3>
+                  <button id="LeadGenButton" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+              </div>
+              <div id="LeadGenContent" style="display: none; margin-left: 20px;">
+                  <div>
+                      <h3 style="display: inline;">AS - Reschedule</h3>
+                      <button id="LrescheduleButtonTS" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+                  </div>
+                  <div id="LrescheduleContentTS" style="display: none; margin-left: 20px;">
+                      <a href="#" id="LworkIp">AS - Work in Progress</a><br><br>
+                      <a href="#" id="Lresch">AS - Reschedule 1</a><br><br>
+                      <a href="#" id="LreschA">AS - Acceptable Reschedule</a><br><br>
+                  </div>
+                  <div>
+                      <h3 style="display: inline;">AS - Reschedule</h3>
+                      <button id="LawaitingButtonTs" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+                  </div>
+                  <div id="LawaitingContentTs" style="display: none; margin-left: 20px;">
+                      <a href="#" id="LawaIp">NI - Awaiting Inputs</a><br><br>
+                      <a href="#" id="Lic">NI - In Consult</a><br><br>
+                      <a href="#" id="Lav">NI - Awaiting Validation</a><br><br>
+                      <a href="#" id="Lac">NI - Attempted Contact</a><br><br>
+                      <a href="#" id="Lmlag">NI - Modifying leadform to accept GCLID</a><br><br>
+                      <a href="#" id="Lucag">NI - Updating CRM to accept GCLID</a><br><br>
+                      <a href="#" id="Lpdi">NI - Preparing data for import</a><br><br>
+                      <a href="#" id="Lno">NI - Other</a><br><br>
+                  </div>
+                  <div>
+                      <h3 style="display: inline;">IN - Inactive Cases</h3>
+                      <button id="LinactiveButtonTS" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+                  </div>
+                  <div id="LinactiveContentTS" style="display: none; margin-left: 20px;">
+                      <a href="#" id="linInf">IN - Infeasible</a><br><br>
+                      <a href="#" id="linNreach">IN - Not Reachable</a><br><br>
+                      <a href="#" id="linNotIntest">IN - Not Interested</a><br><br>
+                      <a href="#" id="linNotReady">IN - Not Ready</a><br><br>
+                      <a href="#" id="linOssRtit">IN - Out of Scope - Rerouted to Internal Team</a><br><br>
+                      <a href="#" id="linOssUtt">IN - Out of Scope - Unable to Transfer</a><br><br>
+                      <a href="#" id="linOssEts">IN - Out of Scope - Email to Seller</a><br><br>
+                      <a href="#" id="linO">IN - Other</a><br><br>
+                  </div>
+                  <div>
+                      <h3 style="display: inline;">SO - Implementation</h3>
+                      <button id="limpButtonTs" style="background: none; border: none; cursor: pointer; font-size: 1.2em;">⬇</button>
+                  </div>
+                  <div id="limpContentTs" style="display: none; margin-left: 20px;">
+                      <a href="#" id="limpSf">SO - Verified</a><br><br>
+                      <a href="#" id="limpves">SO - Verified Email to Seller</a><br><br>
+                      <a href="#" id="limpso">SO - Others</a><br><br>
+                  </div>
+              </div>
+              </div>
+          </div>
+  `;
 
   var CaseDetail = document.createElement("div");
   CaseDetail.id = "caseDetail";
