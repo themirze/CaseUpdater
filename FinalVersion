@@ -463,7 +463,7 @@ javascript: (function () {
     };
     document.getElementById("niInCons").onclick = function (event) {
       event.preventDefault();
-      sendMail("ts ni ic");
+      sendMail("ts ni av");
     };
     document.getElementById("niAwaVal").onclick = function (event) {
       event.preventDefault();
