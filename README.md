@@ -12,3 +12,7 @@ new div card
   ).singleNodeValue;
 
 cart content
+
+
+**********
+
