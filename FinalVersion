@@ -650,7 +650,7 @@ javascript: (function () {
       }
     }
     function generateCaseNote(substatus, reason, onCallComments) {
-      var field = document.querySelector("case-note-card-content-wrapper > div > editor > div > div");
+      var field = document.querySelector("case-note-card-content-wrapper > div > editor > div > div > p");
       var MyDate = new Date();
       var MyDateString =
         ("0" + MyDate.getDate()).slice(-2) + "/" + ("0" + (MyDate.getMonth() + 1)).slice(-2) + "/" + MyDate.getFullYear();
