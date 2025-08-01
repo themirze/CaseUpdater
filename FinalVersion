@@ -663,14 +663,7 @@ javascript: (function () {
         "Screenshots:".bold() + " Attached files",
         "On Call( Call Started) signaled on time?: ".bold() + "Attached files",
       ];
-      setTimeout(
-        async () =>
-          await window.navigator.clipboard
-            .readText()
-            .then((speakEasyID) => print(speakEasyID))
-            .catch((err) => alert("Open a case note and copy SpeakEasy ID")),
-        0
-      );
+
   
       function print(id) {
         field.innerHTML = "";
