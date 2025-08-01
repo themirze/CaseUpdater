@@ -634,51 +634,53 @@ javascript: (function () {
       fastNote();
     };
     function fastNote() {
-      var field = document.evaluate( "/html/body/div[1]/root/div/div/case-details/div/div/card-deck/div/write-deck/div/div/card/div/div[2]/dynamic-component/case-note-card-content-wrapper/div/div/editor/div/div/p", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
-      var MyDate = new Date();
-      var MyDateString =
-        ("0" + MyDate.getDate()).slice(-2) + "/" + ("0" + (MyDate.getMonth() + 1)).slice(-2) + "/" + MyDate.getFullYear();
-      var caseNote = [
-        "Date: ".bold() + "(" + MyDateString + ")",
-        "Q+ status:".bold() + " Updated.",
-        "Action:".bold() + " A reminder email has been sent.",
-        "Case Status:".bold() + " Awaiting response from customer...",
-      ];
-      field.innerHTML = "";
-      for (var i = 0; i < caseNote.length; i++) {
-        field.innerHTML += caseNote[i] + "<br><br>";
-      }
+    var field = document.evaluate(
+      "/html/body/div[1]/root/div/div/case-details/div/div/card-deck/div/write-deck/div/div/card/div/div[2]/dynamic-component/case-note-card-content-wrapper/div/div/editor/div/div/p",
+      document,
+      null,
+      XPathResult.FIRST_ORDERED_NODE_TYPE,
+      null
+    ).singleNodeValue;
+    var MyDate = new Date();
+    var MyDateString =
+      ("0" + MyDate.getDate()).slice(-2) + "/" + ("0" + (MyDate.getMonth() + 1)).slice(-2) + "/" + MyDate.getFullYear();
+    var caseNote = [
+      "Date: ".bold() + "(" + MyDateString + ")",
+      "Q+ status:".bold() + " Updated.",
+      "Action:".bold() + " A reminder email has been sent.",
+      "Case Status:".bold() + " Awaiting response from customer...",
+    ];
+    field.innerHTML = "";
+    for (var i = 0; i < caseNote.length; i++) {
+      field.innerHTML += caseNote[i] + "\u00A0<br><br>";
     }
-    function generateCaseNote(substatus, reason, onCallComments) {
-      var field = document.evaluate( "/html/body/div[1]/root/div/div/case-details/div/div/card-deck/div/write-deck/div/div/card/div/div[2]/dynamic-component/case-note-card-content-wrapper/div/div/editor/div/div/p", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
-      var MyDate = new Date();
-      var MyDateString =
-        ("0" + MyDate.getDate()).slice(-2) + "/" + ("0" + (MyDate.getMonth() + 1)).slice(-2) + "/" + MyDate.getFullYear();
-      var caseNote = [
-        "Date: ".bold() + "(" + MyDateString + ")",
-        "Speakeasy ID:".bold() + " via connect",
-        "Substatus:".bold() + " " + substatus,
-        "Reason/Comments:".bold() + " " + reason,
-        "On Call Comments:".bold() + " " + onCallComments,
-        "Screenshots:".bold() + " Attached files",
-        "On Call( Call Started) signaled on time?: ".bold() + "Attached files",
-      ];
+  }
+  function generateCaseNote(substatus, reason, onCallComments) {
+    var field = document.evaluate(
+      "/html/body/div[1]/root/div/div/case-details/div/div/card-deck/div/write-deck/div/div/card/div/div[2]/dynamic-component/case-note-card-content-wrapper/div/div/editor/div/div/p",
+      document,
+      null,
+      XPathResult.FIRST_ORDERED_NODE_TYPE,
+      null
+    ).singleNodeValue;
+    var MyDate = new Date();
+    var MyDateString =
+      ("0" + MyDate.getDate()).slice(-2) + "/" + ("0" + (MyDate.getMonth() + 1)).slice(-2) + "/" + MyDate.getFullYear();
+    var caseNote = [
+      "Date: ".bold() + "(" + MyDateString + ")",
+      "Speakeasy ID:".bold() + " via connect",
+      "Substatus:".bold() + " " + substatus,
+      "Reason/Comments:".bold() + " " + reason,
+      "On Call Comments:".bold() + " " + onCallComments,
+      "Screenshots:".bold() + " Attached files",
+      "On Call( Call Started) signaled on time?: ".bold() + "Attached files",
+    ];
 
-  
-      function print(id) {
-        field.innerHTML = "";
-        var regex = /^P\d{19}/;
-        for (var i = 0; i < caseNote.length; i++) {
-          if (i == 1 && new RegExp(regex).test(id)) {
-            field.innerHTML += caseNote[1] + " " + id;
-            field.innerHTML += "<br><br>";
-          } else {
-            field.innerHTML += caseNote[i] + "\u00A0";
-            field.innerHTML += "<br><br>";
-          }
-        }
-      }
+    field.innerHTML = "";
+    for (var i = 0; i < caseNote.length; i++) {
+      field.innerHTML += caseNote[i] + "\u00A0<br><br>";
     }
+  }
     function sendMail(value) {
       setTimeout(function () {
         var emailButtonSelector = 'material-button[debug-id="canned_response_button"]';
