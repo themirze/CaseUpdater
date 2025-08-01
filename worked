@@ -1,0 +1,33 @@
+javascript:void(function () {
+  var field = document.evaluate(
+    "/html/body/div[1]/root/div/div/case-details/div/div/card-deck/div/write-deck/div/div/card/div/div[2]/dynamic-component/case-note-card-content-wrapper/div/div/editor/div/div/p",
+    document,
+    null,
+    XPathResult.FIRST_ORDERED_NODE_TYPE,
+    null
+  ).singleNodeValue;
+
+  var MyDate = new Date();
+  var MyDateString = ('0' + MyDate.getDate()).slice(-2) + '/' + 
+                     ('0' + (MyDate.getMonth() + 1)).slice(-2) + '/' + 
+                     MyDate.getFullYear();
+
+
+  var caseNote = [
+    "Date: ".bold() + MyDateString,
+    "Substatus: ".bold() + "NI - Awaiting Inputs(ts ni ai)",
+    "Reason/Comments: ".bold() + "NI - Awaiting Inputs(ts ni ai)",
+    "On Call Comments: ".bold() + 
+      "I helped the advertiser to create (1), but we still need more time to make sure (2).",
+    "Tags Implemented: ".bold() + "0 tag implemented.",
+    "Screenshots: ".bold() + "In attachment.",
+    "Multiple CIDs: ".bold() + "N/A",
+    "On Call (Call Started) signaled on time?: ".bold() + "Yes, it started on time (see attachment)."
+  ];
+
+  field.innerHTML = "";
+
+  for (var i = 0; i < caseNote.length; i++) {
+    field.innerHTML += caseNote[i] + "\u00A0<br><br>";
+  }
+})();
