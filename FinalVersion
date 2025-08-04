@@ -244,6 +244,23 @@ javascript: (function () {
   
     buttonDiv.appendChild(closeButton);
     buttonDiv.appendChild(purgerButton);
+    
+    var pasteButton = document.createElement("button");
+    pasteButton.textContent = "Paste📋";
+    pasteButton.onclick = async function () {
+      const clipboardText = await navigator.clipboard.readText();
+      const selection = window.getSelection();
+
+      if (!selection.rangeCount) return;
+
+      const range = selection.getRangeAt(0);
+      const span = document.createElement("span");
+      span.innerHTML = clipboardText;
+      range.deleteContents();
+      range.insertNode(span);
+    };
+
+    buttonDiv.appendChild(pasteButton);
     contentDiv.appendChild(CaseDetail);
     popupDiv.appendChild(contentDiv);
     document.body.appendChild(popupDiv);
